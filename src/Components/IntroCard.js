@@ -25,8 +25,8 @@ export default function IntroCard() {
         }}
         color="text.secondary"
       >
-        The QR & Barcode Scanner is the perfect tool to scan your QR codes
-        anytime and anywhere. Now you can easily Scan your QR codes all in one
+        The ideal tool to scan your QR codes anytime, anyplace is the QR &
+        Barcode Scanner. You can now quickly scan all of your QR codes from one
         place.
       </Typography>
     </Card>
