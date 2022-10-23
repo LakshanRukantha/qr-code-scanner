@@ -12,10 +12,10 @@ function App() {
         sx={{
           display: "flex",
           flexDirection: "column",
-          alignItems: "center",
-          justifyContent: "center",
+          alignItems: "space-around",
+          justifyContent: "space-around",
           position: "relative",
-          minHeight: "calc(100vh)",
+          // height: "calc(100vh)",
         }}
       >
         <IntroCard />
