@@ -13,6 +13,7 @@ export default function IntroCard() {
         alignItems: "center",
         margin: 1,
         mb: 5,
+        mt: 10,
       }}
     >
       <Typography
@@ -24,8 +25,9 @@ export default function IntroCard() {
         }}
         color="text.secondary"
       >
-        The QR & Barcode Scanner is the perfect tool to scan
-        your QR codes anytime and anywhere. Now you can easily Scan your QR codes all in one place.
+        The QR & Barcode Scanner is the perfect tool to scan your QR codes
+        anytime and anywhere. Now you can easily Scan your QR codes all in one
+        place.
       </Typography>
     </Card>
   );

@@ -9,7 +9,15 @@ import QrCodeScannerIcon from "@mui/icons-material/QrCodeScanner";
 
 export default function DenseAppBar() {
   return (
-    <Box sx={{ flexGrow: 1 }}>
+    <Box
+      sx={{
+        flexGrow: 1,
+        position: "fixed",
+        top: "0px",
+        width: "100%",
+        zIndex: "1",
+      }}
+    >
       <AppBar position="static">
         <Toolbar variant="dense">
           <IconButton

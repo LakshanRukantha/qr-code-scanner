@@ -1,7 +1,6 @@
 import React from "react";
 import { Container } from "@mui/system";
 import DenseAppBar from "./Components/AppBar";
-// import Button from "./Components/Button";
 import IntroCard from "./Components/IntroCard";
 import Scanner from "./Components/Scanner";
 
@@ -9,10 +8,18 @@ function App() {
   return (
     <>
       <DenseAppBar />
-      <Container>
+      <Container
+        sx={{
+          display: "flex",
+          flexDirection: "column",
+          alignItems: "center",
+          justifyContent: "center",
+          position: "relative",
+          height: "calc(100vh-10px)",
+        }}
+      >
         <IntroCard />
-        <Scanner/>
-        {/* <Button /> */}
+        <Scanner />
       </Container>
     </>
   );
