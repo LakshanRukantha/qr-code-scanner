@@ -12,7 +12,7 @@ export default function IntroCard() {
         justifyContent: "center",
         alignItems: "center",
         margin: 1,
-        mb: 5,
+        mb: 3,
         mt: 10,
       }}
     >

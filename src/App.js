@@ -15,7 +15,7 @@ function App() {
           alignItems: "center",
           justifyContent: "center",
           position: "relative",
-          height: "calc(100vh-10px)",
+          minHeight: "calc(100vh)",
         }}
       >
         <IntroCard />

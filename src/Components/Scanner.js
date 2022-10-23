@@ -31,8 +31,8 @@ const Scanner = (props) => {
           alignContent: "center",
           justifyContent: "center",
           alignItems: "center",
-          mt: 4.5,
-          mb: 4.5,
+          mt: 3,
+          mb: 3,
         }}
       >
         <Typography className="results">

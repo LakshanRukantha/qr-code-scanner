@@ -28,7 +28,7 @@
   text-decoration: none;
   font-size: 16px;
   max-width: 500px;
-  width: max-content;
+  width: 100%;
   padding: 0.4rem;
   word-break: break-all;
 }
