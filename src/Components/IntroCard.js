@@ -13,7 +13,7 @@ export default function IntroCard() {
         alignItems: "center",
         margin: 1,
         mb: 5,
-        mt: 10,
+        mt: 0,
       }}
     >
       <Typography

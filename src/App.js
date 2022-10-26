@@ -1,13 +1,14 @@
 import React from "react";
 import { Container } from "@mui/system";
-import DenseAppBar from "./Components/AppBar";
+import DrawerAppBar from "./Components/DrawerAppBar";
 import IntroCard from "./Components/IntroCard";
 import Scanner from "./Components/Scanner";
+// import Generator from "./Components/Generator";
 
 function App() {
   return (
     <>
-      <DenseAppBar />
+      <DrawerAppBar />
       <Container
         sx={{
           display: "flex",

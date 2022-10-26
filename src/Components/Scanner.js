@@ -19,9 +19,9 @@ const Scanner = (props) => {
             setData(result?.text);
           }
 
-          if (!!error) {
-            console.info(error);
-          }
+          // if (!!error) {
+          //   console.info(error);
+          // }
         }}
       />
       <Card
