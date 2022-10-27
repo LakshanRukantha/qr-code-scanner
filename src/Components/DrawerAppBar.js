@@ -60,15 +60,19 @@ function DrawerAppBar(props) {
             <MenuIcon />
           </IconButton>
           <Typography
+            className="apptitle-mobile"
             variant="h6"
             component="div"
-            sx={{ flexGrow: 1, display: { xs: "none", sm: "block" } }}
+            sx={{
+              flexGrow: 1,
+              display: { xs: "block", sm: "block" },
+            }}
           >
             QRCodeX
           </Typography>
           <Box sx={{ display: { xs: "none", sm: "block" } }}>
             {navItems.map((item) => (
-              <Button key={item} sx={{ color: "#fff" }}>
+              <Button key={item} sx={{ color: "#fff", marginLeft: "1rem" }}>
                 {item}
               </Button>
             ))}

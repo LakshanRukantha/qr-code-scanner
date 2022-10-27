@@ -3,6 +3,7 @@ import { Container } from "@mui/system";
 import DrawerAppBar from "./Components/DrawerAppBar";
 import IntroCard from "./Components/IntroCard";
 import Scanner from "./Components/Scanner";
+import Footer from "./Components/Footer";
 // import Generator from "./Components/Generator";
 
 function App() {
@@ -16,12 +17,12 @@ function App() {
           alignItems: "space-around",
           justifyContent: "space-around",
           position: "relative",
-          // height: "calc(100vh)",
         }}
       >
         <IntroCard />
         <Scanner />
       </Container>
+      <Footer />
     </>
   );
 }
