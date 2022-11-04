@@ -13,9 +13,15 @@ import MenuIcon from "@mui/icons-material/Menu";
 import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
 import Button from "@mui/material/Button";
+import { Link } from "react-router-dom";
 
 const drawerWidth = 240;
-const navItems = ["Scanner", "Generator", "About"];
+
+const navItems = [
+  { id: "1", btnName: "Scanner", url: "/" },
+  { id: "2", btnName: "Generator", url: "/generator" },
+  { id: "3", btnName: "About", url: "/about" },
+];
 
 function DrawerAppBar(props) {
   const { window } = props;
@@ -33,9 +39,11 @@ function DrawerAppBar(props) {
       <Divider />
       <List>
         {navItems.map((item) => (
-          <ListItem key={item} disablePadding>
+          <ListItem key={item.id} disablePadding>
             <ListItemButton sx={{ textAlign: "center" }}>
-              <ListItemText primary={item} />
+              <Link to={item.url}>
+                <ListItemText primary={item.btnName} />
+              </Link>
             </ListItemButton>
           </ListItem>
         ))}
@@ -72,9 +80,14 @@ function DrawerAppBar(props) {
           </Typography>
           <Box sx={{ display: { xs: "none", sm: "block" } }}>
             {navItems.map((item) => (
-              <Button key={item} sx={{ color: "#fff", marginLeft: "1rem" }}>
-                {item}
-              </Button>
+              <Link to={item.url}>
+                <Button
+                  key={item.id}
+                  sx={{ color: "#fff", marginLeft: "1rem" }}
+                >
+                  {item.btnName}
+                </Button>
+              </Link>
             ))}
           </Box>
         </Toolbar>

@@ -9,7 +9,7 @@ function App() {
     <BrowserRouter>
       <Routes>
         <Route exact path="/" element={<Scanner />} />
-        <Route exact path="/generaotor" element={<Generator />} />
+        <Route exact path="/generator" element={<Generator />} />
         <Route exact path="/about" element={<About />} />
       </Routes>
     </BrowserRouter>
