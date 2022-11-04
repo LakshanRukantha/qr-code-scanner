@@ -15,12 +15,21 @@ import Typography from "@mui/material/Typography";
 import Button from "@mui/material/Button";
 import { Link } from "react-router-dom";
 
+import FilterCenterFocusIcon from "@mui/icons-material/FilterCenterFocus";
+import QrCode2Icon from "@mui/icons-material/QrCode2";
+import InfoIcon from "@mui/icons-material/Info";
+
 const drawerWidth = 240;
 
 const navItems = [
-  { id: "1", btnName: "Scanner", url: "/" },
-  { id: "2", btnName: "Generator", url: "/generator" },
-  { id: "3", btnName: "About", url: "/about" },
+  { id: "1", btnName: "Scanner", url: "/", icon: <FilterCenterFocusIcon /> },
+  {
+    id: "2",
+    btnName: "Generator",
+    url: "/generator",
+    icon: <QrCode2Icon />,
+  },
+  { id: "3", btnName: "About", url: "/about", icon: <InfoIcon /> },
 ];
 
 function DrawerAppBar(props) {
@@ -39,13 +48,23 @@ function DrawerAppBar(props) {
       <Divider />
       <List>
         {navItems.map((item) => (
-          <ListItem key={item.id} disablePadding>
-            <ListItemButton sx={{ textAlign: "center" }}>
-              <Link to={item.url}>
-                <ListItemText primary={item.btnName} />
-              </Link>
-            </ListItemButton>
-          </ListItem>
+          <Link to={item.url}>
+            <ListItem key={item.id} disablePadding>
+              <ListItemButton
+                sx={{
+                  textAlign: "left",
+                  paddingLeft: "2rem",
+                  paddingRight: "2rem",
+                }}
+              >
+                {item.icon}
+                <ListItemText
+                  primary={item.btnName}
+                  sx={{ marginLeft: "1rem" }}
+                />
+              </ListItemButton>
+            </ListItem>
+          </Link>
         ))}
       </List>
     </Box>
