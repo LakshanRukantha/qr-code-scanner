@@ -2,9 +2,9 @@ import React, { useState } from "react";
 import { QrReader } from "react-qr-reader";
 import Card from "@mui/material/Card";
 import { Typography } from "@mui/material";
-import "./Scanner.css";
+import "./CodeScanner.css";
 
-const Scanner = (props) => {
+const CodeScanner = (props) => {
   const [data, setData] = useState("QR Code Not Detected!");
 
   return (
@@ -43,4 +43,4 @@ const Scanner = (props) => {
   );
 };
 
-export default Scanner;
+export default CodeScanner;

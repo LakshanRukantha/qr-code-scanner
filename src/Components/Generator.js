@@ -1,9 +1,10 @@
 import React from "react";
+import { TextField } from "@mui/material";
 import QRCode from "qrcode";
 
 const Generator = () => {
   const GenerateQRCode = () => {
-    QRCode.toDataURL("Hello World!")
+    QRCode.toDataURL("")
       .then((url) => {
         console.log(url);
       })
@@ -14,7 +15,7 @@ const Generator = () => {
 
   return (
     <>
-      <button onClick={GenerateQRCode}>generate</button>
+      <TextField id="outlined-basic" label="Outlined" variant="outlined" />
     </>
   );
 };

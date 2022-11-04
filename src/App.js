@@ -1,29 +1,18 @@
 import React from "react";
-import { Container } from "@mui/system";
-import DrawerAppBar from "./Components/DrawerAppBar";
-import IntroCard from "./Components/IntroCard";
-import Scanner from "./Components/Scanner";
-import Footer from "./Components/Footer";
-// import Generator from "./Components/Generator";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import Scanner from "./Components/Pages/Scanner";
+import Generator from "./Components/Pages/Generator";
+import About from "./Components/Pages/About";
 
 function App() {
   return (
-    <>
-      <DrawerAppBar />
-      <Container
-        sx={{
-          display: "flex",
-          flexDirection: "column",
-          alignItems: "space-around",
-          justifyContent: "space-around",
-          position: "relative",
-        }}
-      >
-        <IntroCard />
-        <Scanner />
-      </Container>
-      <Footer />
-    </>
+    <BrowserRouter>
+      <Routes>
+        <Route exact path="/" element={<Scanner />} />
+        <Route exact path="/generaotor" element={<Generator />} />
+        <Route exact path="/about" element={<About />} />
+      </Routes>
+    </BrowserRouter>
   );
 }
 
