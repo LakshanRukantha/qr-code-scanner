@@ -14,7 +14,6 @@ import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
 import Button from "@mui/material/Button";
 import { Link } from "react-router-dom";
-
 import FilterCenterFocusIcon from "@mui/icons-material/FilterCenterFocus";
 import QrCode2Icon from "@mui/icons-material/QrCode2";
 import InfoIcon from "@mui/icons-material/Info";
@@ -53,7 +52,7 @@ function DrawerAppBar(props) {
               <ListItemButton
                 sx={{
                   textAlign: "left",
-                  paddingLeft: "2rem",
+                  paddingLeft: "1rem",
                   paddingRight: "2rem",
                 }}
               >
