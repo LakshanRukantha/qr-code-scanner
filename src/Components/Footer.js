@@ -5,7 +5,7 @@ const Footer = () => {
   return (
     <Box
       sx={{
-        position: "absolute",
+        position: "relative",
         left: "0",
         bottom: "0rem",
         right: "0",

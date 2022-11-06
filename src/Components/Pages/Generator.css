@@ -1,3 +1,7 @@
+.main-wrapper{
+    padding: 0 !important;
+}
+
 .qr-code-wrapper{
     display: block;
     margin: 0 auto;

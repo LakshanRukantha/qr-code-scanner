@@ -1,6 +1,7 @@
 import React from "react";
 import Card from "@mui/material/Card";
 import CardMedia from "@mui/material/CardMedia";
+import { Container } from "@mui/system";
 import { Box } from "@mui/material";
 import { CardActionArea } from "@mui/material";
 import { useState } from "react";
@@ -39,38 +40,65 @@ const Generator = () => {
   };
 
   return (
-    <>
+    <Container
+      className="main-wrapper"
+      sx={{
+        display: "flex",
+        alignItems: "center",
+        justifyContent: "space-between",
+        flexDirection: "column",
+        minHeight: "100vh",
+        paddingLeft: "0",
+        paddingRight: "0",
+        minWidth: "100%",
+      }}
+    >
       <DrawerAppBar />
+      <Container
+        sx={{
+          display: " block",
+          marginLeft: "auto",
+          marginRight: "auto",
+          width: "100%",
+          flexDirection: "column",
+          position: "relative",
+        }}
+      >
+        <Card className="qr-code-wrapper" sx={{ maxWidth: 300 }}>
+          <CardActionArea
+            sx={{
+              display: "flex",
+              gap: 2,
+              alignItems: "center",
+              justifyContent: "center",
+              flexWrap: "wrap",
+            }}
+          >
+            <CardMedia component="img" image={imgUrl} onClick={downloadImage} />
+          </CardActionArea>
+        </Card>
 
-      <Card className="qr-code-wrapper" sx={{ maxWidth: 300 }}>
-        <CardActionArea
+        <Box
           sx={{
             display: "flex",
             gap: 2,
             alignItems: "center",
-            justifyContent: "center",
             flexWrap: "wrap",
           }}
         >
-          <CardMedia component="img" image={imgUrl} onClick={downloadImage} />
-        </CardActionArea>
-      </Card>
-
-      <Box
-        sx={{ display: "flex", gap: 2, alignItems: "center", flexWrap: "wrap" }}
-      >
-        <Textarea
-          className="data-text"
-          size="sm"
-          label="Size"
-          placeholder="Text"
-          onChange={HandleTextChange}
-          fullWidth
-        />
-      </Box>
+          <Textarea
+            className="data-text"
+            size="sm"
+            label="Size"
+            placeholder="Text"
+            onChange={HandleTextChange}
+            fullWidth
+          />
+        </Box>
+      </Container>
 
       <Footer />
-    </>
+    </Container>
   );
 };
 
