@@ -15,28 +15,17 @@ import "../Pages/Generator.css";
 const Generator = () => {
   const [imgUrl, setImgUrl] = useState("Lakshan");
 
-  if (imgUrl === "") {
-    QRCode.toDataURL(imgUrl)
-      .then((url) => {
-        setImgUrl(url);
-      })
-      .catch((err) => {
-        console.error(err);
-      });
-  }
-
-  const HandleTextChange = (e) => {
-    QRCode.toDataURL(e.target.value)
-      .then((url) => {
-        setImgUrl(url);
-      })
-      .catch((err) => {
-        console.error(err);
-      });
+  const generateQR = async (e) => {
+    try {
+      setImgUrl(await QRCode.toDataURL(e.target.value));
+    } catch (err) {
+      console.error(err);
+    }
   };
 
   const downloadImage = () => {
-    saveAs(imgUrl, "image.jpg"); // Put your image url here.
+    let date = Math.round(Date.now() / 1000);
+    saveAs(imgUrl, `QRCode_${date}.jpg`);
   };
 
   return (
@@ -130,7 +119,7 @@ const Generator = () => {
               multiline
               maxRows={4}
               fullWidth
-              onChange={HandleTextChange}
+              onChange={generateQR}
               sx={{ display: "auto", width: "300px", margin: "auto" }}
             />
           </Box>
