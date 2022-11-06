@@ -4,6 +4,7 @@ import CardMedia from "@mui/material/CardMedia";
 import { Box } from "@mui/material";
 import { CardActionArea } from "@mui/material";
 import { useState } from "react";
+import { saveAs } from "file-saver";
 import Textarea from "@mui/joy/Textarea";
 import QRCode from "qrcode";
 import DrawerAppBar from "../DrawerAppBar";
@@ -11,7 +12,17 @@ import Footer from "../Footer";
 import "../Pages/Generator.css";
 
 const Generator = () => {
-  const [imgUrl, setImgUrl] = useState("QRCodeX");
+  const [imgUrl, setImgUrl] = useState("Lakshan");
+
+  if (imgUrl === "") {
+    QRCode.toDataURL(imgUrl)
+      .then((url) => {
+        setImgUrl(url);
+      })
+      .catch((err) => {
+        console.error(err);
+      });
+  }
 
   const HandleTextChange = (e) => {
     QRCode.toDataURL(e.target.value)
@@ -21,6 +32,10 @@ const Generator = () => {
       .catch((err) => {
         console.error(err);
       });
+  };
+
+  const downloadImage = () => {
+    saveAs(imgUrl, "image.jpg"); // Put your image url here.
   };
 
   return (
@@ -37,7 +52,7 @@ const Generator = () => {
             flexWrap: "wrap",
           }}
         >
-          <CardMedia component="img" image={imgUrl} alt="QR Code" />
+          <CardMedia component="img" image={imgUrl} onClick={downloadImage} />
         </CardActionArea>
       </Card>
 
