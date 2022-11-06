@@ -1,17 +1,14 @@
-.main-wrapper{
-    padding: 0 !important;
+.main-wrapper {
+  padding: 0 !important;
 }
 
-.qr-code-wrapper{
-    display: block;
-    margin: 0 auto;
-    min-height: 300px;
-    min-width: 300px;
+.qr-code-wrapper {
+  display: block;
+  margin: 0 auto;
+  min-height: 300px;
+  min-width: 300px;
 }
 
-.data-text{
-    display: block;
-    margin: 0 auto;
-    min-width: 300px !important;
-    margin-top: 2rem;
+textarea {
+  text-align: justify;
 }

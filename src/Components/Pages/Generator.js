@@ -6,7 +6,7 @@ import { Box } from "@mui/material";
 import { CardActionArea } from "@mui/material";
 import { useState } from "react";
 import { saveAs } from "file-saver";
-import Textarea from "@mui/joy/Textarea";
+import TextField from "@mui/material/TextField";
 import QRCode from "qrcode";
 import DrawerAppBar from "../DrawerAppBar";
 import Footer from "../Footer";
@@ -64,37 +64,77 @@ const Generator = () => {
           position: "relative",
         }}
       >
-        <Card className="qr-code-wrapper" sx={{ maxWidth: 300 }}>
-          <CardActionArea
+        <Card
+          elevation={2}
+          sx={{
+            display: "block",
+            marginLeft: "auto",
+            marginRight: "auto",
+            maxWidth: "1200px",
+            paddingTop: "2rem",
+            paddingBottom: "2rem",
+            marginBottom: "3rem",
+            borderRadius: "0.5rem",
+          }}
+        >
+          <Card
+            className="qr-code-wrapper"
+            elevation={5}
+            sx={{ maxWidth: 300, borderRadius: "0.5rem" }}
+          >
+            <CardActionArea
+              sx={{
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center",
+                flexWrap: "wrap",
+              }}
+            >
+              <CardMedia
+                component="img"
+                image={imgUrl}
+                onClick={downloadImage}
+                sx={{ maxWidth: 300 }}
+              />
+            </CardActionArea>
+          </Card>
+        </Card>
+        <Card
+          elevation={2}
+          sx={{
+            display: "block",
+            marginLeft: "auto",
+            marginRight: "auto",
+            maxWidth: "1200px",
+            paddingTop: "0.5rem",
+            paddingBottom: "0.5rem",
+            marginTop: "2rem",
+            marginBottom: "3rem",
+            borderRadius: "0.5rem",
+          }}
+        >
+          <Box
             sx={{
               display: "flex",
               gap: 2,
               alignItems: "center",
-              justifyContent: "center",
+              padding: "1.5rem",
               flexWrap: "wrap",
             }}
           >
-            <CardMedia component="img" image={imgUrl} onClick={downloadImage} />
-          </CardActionArea>
+            <TextField
+              className="data-text"
+              id="outlined-multiline-flexible"
+              label="Text"
+              placeholder="Type anything that you want..."
+              multiline
+              maxRows={4}
+              fullWidth
+              onChange={HandleTextChange}
+              sx={{ display: "auto", width: "300px", margin: "auto" }}
+            />
+          </Box>
         </Card>
-
-        <Box
-          sx={{
-            display: "flex",
-            gap: 2,
-            alignItems: "center",
-            flexWrap: "wrap",
-          }}
-        >
-          <Textarea
-            className="data-text"
-            size="sm"
-            label="Size"
-            placeholder="Text"
-            onChange={HandleTextChange}
-            fullWidth
-          />
-        </Box>
       </Container>
 
       <Footer />
