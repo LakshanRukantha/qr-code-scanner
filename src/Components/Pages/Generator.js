@@ -16,6 +16,13 @@ const Generator = () => {
   const [dataText, setDataText] = useState("");
   const [imgUrl, setImgUrl] = useState("https://svgshare.com/i/nuZ.svg");
 
+  const inputHandle = (e) => {
+    setDataText(e.target.value);
+    if (e.target.value === "") {
+      setImgUrl("https://svgshare.com/i/nuZ.svg");
+    }
+  };
+
   const generateQR = async () => {
     await QRCode.toDataURL(dataText)
       .then((url) => {
@@ -101,7 +108,7 @@ const Generator = () => {
             placeholder="Type anything that you want..."
             multiline
             onChange={(e) => {
-              setDataText(e.target.value);
+              inputHandle(e);
             }}
             maxRows={4}
             fullWidth
@@ -122,7 +129,6 @@ const Generator = () => {
           </Button>
         </Card>
       </Container>
-
       <Footer />
     </Container>
   );
