@@ -2,6 +2,10 @@
   padding: 0 !important;
 }
 
+main {
+  display: none;
+}
+
 .qr-code-wrapper {
   display: block;
   margin: 0 auto;

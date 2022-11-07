@@ -2,7 +2,6 @@ import React from "react";
 import Card from "@mui/material/Card";
 import CardMedia from "@mui/material/CardMedia";
 import { Container } from "@mui/system";
-import { Box } from "@mui/material";
 import { CardActionArea } from "@mui/material";
 import { useState } from "react";
 import { saveAs } from "file-saver";
@@ -45,31 +44,33 @@ const Generator = () => {
       <DrawerAppBar />
       <Container
         sx={{
-          display: " block",
-          marginLeft: "auto",
-          marginRight: "auto",
           width: "100%",
+          top: "2rem",
           flexDirection: "column",
           position: "relative",
         }}
       >
         <Card
-          elevation={2}
+          elevation={0}
           sx={{
-            display: "block",
-            marginLeft: "auto",
-            marginRight: "auto",
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+            flexDirection: "column",
             maxWidth: "1200px",
-            paddingTop: "2rem",
-            paddingBottom: "2rem",
-            marginBottom: "3rem",
-            borderRadius: "0.5rem",
+            paddingTop: "4rem",
+            paddingBottom: "4rem",
           }}
         >
           <Card
             className="qr-code-wrapper"
-            elevation={5}
-            sx={{ maxWidth: 300, borderRadius: "0.5rem" }}
+            elevation={0}
+            sx={{
+              maxWidth: 300,
+              borderRadius: "0.5rem",
+              marginBottom: "2rem",
+              boxShadow: "0px 0px 40px 2px rgba(0,0,0,0.1)",
+            }}
           >
             <CardActionArea
               sx={{
@@ -83,46 +84,29 @@ const Generator = () => {
                 component="img"
                 image={imgUrl}
                 onClick={downloadImage}
-                sx={{ maxWidth: 300 }}
+                sx={{
+                  maxWidth: 300,
+                  minHeight: 300,
+                }}
               />
             </CardActionArea>
           </Card>
-        </Card>
-        <Card
-          elevation={2}
-          sx={{
-            display: "block",
-            marginLeft: "auto",
-            marginRight: "auto",
-            maxWidth: "1200px",
-            paddingTop: "0.5rem",
-            paddingBottom: "0.5rem",
-            marginTop: "2rem",
-            marginBottom: "3rem",
-            borderRadius: "0.5rem",
-          }}
-        >
-          <Box
+          <TextField
+            className="data-text"
+            id="outlined-multiline-flexible"
+            label="Text"
+            placeholder="Type anything that you want..."
+            multiline
+            maxRows={4}
+            fullWidth
+            onChange={generateQR}
             sx={{
-              display: "flex",
-              gap: 2,
-              alignItems: "center",
-              padding: "1.5rem",
-              flexWrap: "wrap",
+              display: "auto",
+              width: "300px",
+              margin: "auto",
+              boxShadow: "0px 0px 40px 2px rgba(0,0,0,0.1)",
             }}
-          >
-            <TextField
-              className="data-text"
-              id="outlined-multiline-flexible"
-              label="Text"
-              placeholder="Type anything that you want..."
-              multiline
-              maxRows={4}
-              fullWidth
-              onChange={generateQR}
-              sx={{ display: "auto", width: "300px", margin: "auto" }}
-            />
-          </Box>
+          />
         </Card>
       </Container>
 

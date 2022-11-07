@@ -73,7 +73,7 @@ function DrawerAppBar(props) {
     window !== undefined ? () => window().document.body : undefined;
 
   return (
-    <Box sx={{ display: "flex" }}>
+    <Box>
       <AppBar component="nav">
         <Toolbar>
           <IconButton
