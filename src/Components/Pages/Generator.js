@@ -1,6 +1,7 @@
 import React from "react";
 import Card from "@mui/material/Card";
 import CardMedia from "@mui/material/CardMedia";
+import Button from "@mui/material/Button";
 import { Container } from "@mui/system";
 import { CardActionArea } from "@mui/material";
 import { useState } from "react";
@@ -12,14 +13,17 @@ import Footer from "../Footer";
 import "../Pages/Generator.css";
 
 const Generator = () => {
-  const [imgUrl, setImgUrl] = useState("Lakshan");
+  const [dataText, setDataText] = useState("");
+  const [imgUrl, setImgUrl] = useState("https://svgshare.com/i/nuZ.svg");
 
-  const generateQR = async (e) => {
-    try {
-      setImgUrl(await QRCode.toDataURL(e.target.value));
-    } catch (err) {
-      console.error(err);
-    }
+  const generateQR = async () => {
+    await QRCode.toDataURL(dataText)
+      .then((url) => {
+        setImgUrl(url);
+      })
+      .catch((err) => {
+        console.error(err);
+      });
   };
 
   const downloadImage = () => {
@@ -65,6 +69,9 @@ const Generator = () => {
             className="qr-code-wrapper"
             elevation={0}
             sx={{
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
               maxWidth: 300,
               borderRadius: "0.5rem",
               marginBottom: "2rem",
@@ -73,9 +80,6 @@ const Generator = () => {
           >
             <CardActionArea
               sx={{
-                display: "flex",
-                alignItems: "center",
-                justifyContent: "center",
                 flexWrap: "wrap",
               }}
             >
@@ -96,9 +100,11 @@ const Generator = () => {
             label="Text"
             placeholder="Type anything that you want..."
             multiline
+            onChange={(e) => {
+              setDataText(e.target.value);
+            }}
             maxRows={4}
             fullWidth
-            onChange={generateQR}
             sx={{
               display: "auto",
               width: "300px",
@@ -106,6 +112,14 @@ const Generator = () => {
               boxShadow: "0px 0px 40px 2px rgba(0,0,0,0.1)",
             }}
           />
+          <Button
+            variant="contained"
+            fullWidth
+            sx={{ maxWidth: 300, marginTop: "2rem" }}
+            onClick={generateQR}
+          >
+            Generate
+          </Button>
         </Card>
       </Container>
 
