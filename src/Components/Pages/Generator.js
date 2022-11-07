@@ -14,12 +14,14 @@ import "../Pages/Generator.css";
 
 const Generator = () => {
   const [dataText, setDataText] = useState("");
-  const [imgUrl, setImgUrl] = useState("https://svgshare.com/i/nuZ.svg");
+  const [imgUrl, setImgUrl] = useState(
+    "https://i.ibb.co/8jL0Sxy/20221107-222329.png"
+  );
 
   const inputHandle = (e) => {
     setDataText(e.target.value);
     if (e.target.value === "") {
-      setImgUrl("https://svgshare.com/i/nuZ.svg");
+      setImgUrl("https://i.ibb.co/8jL0Sxy/20221107-222329.png");
     }
   };
 

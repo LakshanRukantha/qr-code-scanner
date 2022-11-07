@@ -32,7 +32,6 @@ const CodeScanner = (props) => {
           justifyContent: "center",
           alignItems: "center",
           mt: 4,
-          mb: 4,
         }}
       >
         <Typography className="results">

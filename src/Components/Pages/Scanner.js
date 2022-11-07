@@ -23,10 +23,9 @@ function Scanner() {
       <DrawerAppBar />
       <Container
         sx={{
-          display: "flex",
+          width: "100%",
+          top: "2rem",
           flexDirection: "column",
-          alignItems: "space-around",
-          justifyContent: "space-around",
           position: "relative",
         }}
       >
