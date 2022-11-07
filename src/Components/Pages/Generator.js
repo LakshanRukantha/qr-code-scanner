@@ -35,7 +35,6 @@ const Generator = () => {
         alignItems: "center",
         justifyContent: "space-between",
         flexDirection: "column",
-        minHeight: "100vh",
         paddingLeft: "0",
         paddingRight: "0",
         minWidth: "100%",
