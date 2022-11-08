@@ -14,14 +14,12 @@ import "../Pages/Generator.css";
 
 const Generator = () => {
   const [dataText, setDataText] = useState("");
-  const [imgUrl, setImgUrl] = useState(
-    "https://i.ibb.co/8jL0Sxy/20221107-222329.png"
-  );
+  const [imgUrl, setImgUrl] = useState("https://i.ibb.co/xHxJ0D8/qrcodex.jpg");
 
   const inputHandle = (e) => {
     setDataText(e.target.value);
     if (e.target.value === "") {
-      setImgUrl("https://i.ibb.co/8jL0Sxy/20221107-222329.png");
+      setImgUrl("https://i.ibb.co/xHxJ0D8/qrcodex.jpg");
     }
   };
 
