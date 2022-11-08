@@ -118,10 +118,7 @@ function About() {
             <a href="https://lk.linkedin.com/in/lakshanrukantha" target="blank">
               <LinkedInIcon />
             </a>
-            <a
-              href="https:www.facebook.com/LakshanRukantha.Laki"
-              target="blank"
-            >
+            <a href="https://facebook.com/LakshanRukantha.LaKi" target="blank">
               <FacebookIcon />
             </a>
           </Stack>
